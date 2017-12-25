@@ -29,3 +29,6 @@ RUN apk add --update --no-cache build-base openssl libffi-dev ruby ruby-dev ruby
 RUN apk del build-base libffi-dev openssl ruby-dev \
     && rm -rf /var/cache/apk/*
 RUN gem install s3_website
+
+RUN apk --update add openjdk7-jre
+CMD ["/usr/bin/java", "-version"]
